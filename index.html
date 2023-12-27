@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Facts</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        .tab {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+        }
+        #factDisplay {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        #footer {
+            position: fixed;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Fun Facts</h1>
+
+    <button class="tab" onclick="showFacts('Science')">Science</button>
+    <button class="tab" onclick="showFacts('History')">History</button>
+    <button class="tab" onclick="showFacts('Technology')">Technology</button>
+    <button class="tab" onclick="showFacts('Health')">Health</button>
+    <button class="tab" onclick="showFacts('Literature')">Literature</button>
+
+    <div id="factDisplay">Click a category to see a fun fact!</div>
+
+    <div id="footer">
+        Developed by Ibrahim Khurram
+    </div>
+
+    <script>
+        var facts = {
+            'Science': [
+                'Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible.',
+                'Bananas are berries, but strawberries aren’t.',
+                'Octopuses have three hearts.',
+                'A group of flamingos is called a "flamboyance."',
+                'The Eiffel Tower can be 15 cm taller during the summer.',
+                'Ants never sleep.',
+                'The world’s oldest known recipe is for beer.',
+                'A single cloud can weigh more than 1 million pounds.',
+                'Cows have best friends.',
+                'The shortest war in history was between Britain and Zanzibar on August 27, 1896. Zanzibar surrendered after 38 minutes.',
+                'A day on Venus is longer than a year on Earth.',
+                'The average person will spend six months of their life waiting for red lights to turn green.',
+                'Wombat poop is cube-shaped.',
+                'Cats have five toes on their front paws but only four on their back paws.',
+                'The Great Wall of China is not visible from the moon with the naked eye.',
+                'The human brain is more active during sleep than during the day.',
+                'Koalas have fingerprints.',
+                'There are more possible iterations of a game of chess than there are atoms in the known universe.',
+                'Cleopatra lived closer to the moon landing than to the construction of the Great Pyramid.',
+                'A “jiffy” is an actual unit of time: 1/100th of a second.',
+            ],
+            'History': [
+                'The oldest known recipe in the world is for beer.',
+                'The first recorded game of baseball was played in 1846 in Hoboken, New Jersey.',
+                'The Ancient Egyptians built the Great Pyramid during the reign of Pharaoh Khufu in 2550 BC.',
+                'The word "nerd" was first coined by Dr. Seuss in "If I Ran the Zoo" in 1950.',
+                'The Titanic was the first ship to use the SOS signal.',
+                'Ancient Egyptians slept on pillows made of stone.',
+                'The Great Wall of China was originally created to keep out invaders.',
+                'In ancient Rome, gladiators were not permitted to eat garlic because it was believed to give them strength and courage.',
+                'The first recorded game of baseball was played in 1846 in Hoboken, New Jersey.',
+                'The Ancient Egyptians built the Great Pyramid during the reign of Pharaoh Khufu in 2550 BC.',
+                'The word "nerd" was first coined by Dr. Seuss in "If I Ran the Zoo" in 1950.',
+                'The Titanic was the first ship to use the SOS signal.',
+                'Ancient Egyptians slept on pillows made of stone.',
+                'The Great Wall of China was originally created to keep out invaders.',
+                'In ancient Rome, gladiators were not permitted to eat garlic because it was believed to give them strength and courage.',
+                'The first recorded game of baseball was played in 1846 in Hoboken, New Jersey.',
+                'The Ancient Egyptians built the Great Pyramid during the reign of Pharaoh Khufu in 2550 BC.',
+                'The word "nerd" was first coined by Dr. Seuss in "If I Ran the Zoo" in 1950.',
+                'The Titanic was the first ship to use the SOS signal.',
+            ],
+            'Technology': [
+                'The first computer mouse was made of wood.',
+                'The first domain name ever registered was Symbolics.com.',
+                'The first computer virus was created in 1983.',
+                'The first 1GB hard drive was announced in 1980 and weighed about 550 pounds.',
+                'The first camera took eight hours to snap a photo.',
+                'The first computer mouse was made of wood.',
+                'The first domain name ever registered was Symbolics.com.',
+                'The first computer virus was created in 1983.',
+                'The first 1GB hard drive was announced in 1980 and weighed about 550 pounds.',
+                'The first camera took eight hours to snap a photo.',
+                'The first computer mouse was made of wood.',
+                'The first domain name ever registered was Symbolics.com.',
+                'The first computer virus was created in 1983.',
+                'The first 1GB hard drive was announced in 1980 and weighed about 550 pounds.',
+                'The first camera took eight hours to snap a photo.',
+                'The first computer mouse was made of wood.',
+                'The first domain name ever registered was Symbolics.com.',
+                'The first computer virus was created in 1983.',
+                'The first 1GB hard drive was announced in 1980 and weighed about 550 pounds.',
+            ],
+            'Health': [
+                'Laughing lowers levels of stress hormones and strengthens the immune system.',
+                'Smiling can improve your mood and lower stress.',
+                'Human bones are ounce for ounce stronger than steel.',
+                'Laughter can improve your cardiovascular health.',
+                'The human brain is more active during sleep than during the day.',
+                
+                'An apple a day may really keep the doctor away.',
+                'The sound of a person chewing can trigger anger in people with misophonia.',
+                'Human saliva has a boiling point three times that of regular water.',
+                'The average person will spend six months of their life waiting for red lights to turn green.',
+                'Drinking green tea can improve brain function.',
+                'Exercising regularly can boost your mood and reduce symptoms of depression and anxiety.',
+                'A good laugh can lower levels of cortisol, the stress hormone.',
+                'Eating dark chocolate in moderation can have positive effects on mood and reduce stress.',
+                'Listening to music can have a positive impact on mental health and reduce stress.',
+                'Regular meditation has been shown to reduce symptoms of anxiety and improve overall well-being.',
+                'Maintaining strong social connections is associated with better mental and physical health.',
+                'Spending time in nature has been linked to reduced stress and improved mood.',
+                'Practicing gratitude has been shown to increase feelings of happiness and well-being.',
+                'Getting enough sleep is essential for overall health and well-being.',
+            ],
+            'Literature': [
+                'The word "book" comes from the Old English word "boc," which means a written document.',
+                'William Shakespeare is often referred to as "The Bard."',
+                'The longest sentence in literature is in William Faulkner’s "Absalom, Absalom!" It is 1,287 words long.',
+                'J.R.R. Tolkien typed the entire manuscript for "The Lord of the Rings" with two fingers.',
+                'The first novel ever written on a typewriter is "Tom Sawyer."',
+                'The first book ever written using a word processor is "Sole Survivor" by Dean Koontz.',
+                'Punctuation was rare in ancient Greek and Roman scripts.',
+                'The world’s first novel, "The Tale of Genji," was written by Murasaki Shikibu in the 11th century.',
+                'J.R.R. Tolkien created multiple languages, including Elvish, for his books.',
+                'The world’s largest book is the Kuthodaw Pagoda in Burma, with 729 marble tablets.',
+                'Shakespeare invented the word "assassination" and "bump."',
+                'Mark Twain’s "Adventures of Huckleberry Finn" was the first novel written on a typewriter.',
+                'The first novel ever written on a typewriter is "Tom Sawyer."',
+                'The first book ever written using a word processor is "Sole Survivor" by Dean Koontz.',
+                'Punctuation was rare in ancient Greek and Roman scripts.',
+                'The world’s first novel, "The Tale of Genji," was written by Murasaki Shikibu in the 11th century.',
+                'J.R.R. Tolkien created multiple languages, including Elvish, for his books.',
+                'The first printed book was the Gutenberg Bible, printed around 1455.',
+                'The word "bookworm" originally referred to insects that would eat the binding of books.',
+                'The first book ever published was the Bible.',
+            ]
+        };
+
+        function showFacts(category) {
+            var randomIndex = Math.floor(Math.random() * facts[category].length);
+            var fact = facts[category][randomIndex];
+            document.getElementById('factDisplay').innerText = fact;
+        }
+    </script>
+</body>
+</html>
+
